@@ -1,0 +1,20 @@
+{
+  "name": "exo",
+  "version": "0.0.1",
+  "description": "exo telelogos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "tsc -v"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "telelogos"
+  ],
+  "author": "Nicolas BRIAND Yohann HUBERT",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "2.3.2"
+  }
+}
