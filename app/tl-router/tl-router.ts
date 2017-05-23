@@ -7,6 +7,7 @@ const app = angular.module('tl-router', ['ui.router']);
 
 app.config(($stateProvider) => {
 	'ngInject';
+	console.log('tl-router config xx');
 
 	$stateProvider.state({
 		name: 'home',
