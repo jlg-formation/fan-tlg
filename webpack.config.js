@@ -37,7 +37,18 @@ module.exports = {
                     fallback: 'style-loader',
                     use: 'css-loader?minimize&sourceMap!sass-loader?sourceMap'
                 })
-            }
+            },
+            {
+				test: /\.html$/,
+				use: [{
+					loader: 'ngtemplate-loader',
+					options: {
+						relativeTo: 'app'
+					}
+				}, {
+					loader: 'html-loader'					
+				}]
+			}
         ]
     },
     devtool: 'source-map',

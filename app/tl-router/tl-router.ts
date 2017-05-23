@@ -5,28 +5,35 @@ declare const angular: angular.IAngularStatic;
 
 const app = angular.module('tl-router', ['ui.router']);
 
-app.config(($stateProvider) => {
+declare const require;
+const tlHomeUrl = require('./tmpl/home.html');
+const tlProductsUrl = require('./tmpl/products.html');
+const tlServicesUrl = require('./tmpl/services.html');
+const tlContactUrl = require('./tmpl/contact.html');
+
+app.config(($stateProvider, $urlRouterProvider) => {
 	'ngInject';
 	console.log('tl-router config xxyz');
 
 	$stateProvider.state({
 		name: 'home',
 		url: '/',
-		templateUrl: './tl-router/tmpl/home.html'
+		templateUrl: tlHomeUrl
 	});
 	$stateProvider.state({
 		name: 'products',
 		url: '/products',
-		templateUrl: './tl-router/tmpl/products.html'
+		templateUrl: tlProductsUrl
 	});
 	$stateProvider.state({
 		name: 'services',
 		url: '/services',
-		templateUrl: './tl-router/tmpl/services.html'
+		templateUrl: tlServicesUrl
 	});
 	$stateProvider.state({
 		name: 'contact',
 		url: '/contact',
-		templateUrl: './tl-router/tmpl/contact.html'
+		templateUrl: tlContactUrl
 	});
+	$urlRouterProvider.otherwise('/');
 });

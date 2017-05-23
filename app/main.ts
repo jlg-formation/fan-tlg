@@ -8,23 +8,28 @@ declare const angular: angular.IAngularStatic;
 
 const app = angular.module('main', ['tl-router']);
 
+declare const require;
+const tlHeaderUrl = require('./tmpl/tl-header.html');
+const tlBodyUrl = require('./tmpl/tl-body.html');
+const tlFooterUrl = require('./tmpl/tl-footer.html');
+
 app.directive('tlHeader', () => {
 	return {
 		restrict: 'E',
-		templateUrl: 'tmpl/tl-header.html'
+		templateUrl: tlHeaderUrl
 	};
 });
 
 app.directive('tlBody', () => {
 	return {
 		restrict: 'E',
-		templateUrl: 'tmpl/tl-body.html'
+		templateUrl: tlBodyUrl
 	};
 });
 
 app.directive('tlFooter', () => {
 	return {
 		restrict: 'E',
-		templateUrl: 'tmpl/tl-footer.html'
+		templateUrl: tlFooterUrl
 	};
 });
