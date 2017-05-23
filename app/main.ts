@@ -1,10 +1,9 @@
-/// <reference path="../node_modules/@types/angular/index.d.ts" />
-
 import 'angular';
+import './tl-router/tl-router.ts';
 
 declare const angular: angular.IAngularStatic;
 
-const app = angular.module('main', []);
+const app = angular.module('main', ['tl-router']);
 
 app.directive('tlHeader', () => {
 	return {
