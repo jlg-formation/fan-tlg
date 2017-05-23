@@ -1,5 +1,8 @@
+import './style.scss';
+
 import 'angular';
 import './tl-router/tl-router.ts';
+
 
 declare const angular: angular.IAngularStatic;
 
