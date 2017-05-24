@@ -13,15 +13,19 @@ const tlProductsUrl = require('./tmpl/products.html');
 const tlServicesUrl = require('./tmpl/services.html');
 const tlContactUrl = require('./tmpl/contact.html');
 
-app.config(($stateProvider, $urlRouterProvider) => {
+app.config(($locationProvider, $stateProvider, $urlRouterProvider) => {
 	'ngInject';
 	console.log('tl-router config xxyz');
+
+	$locationProvider
+		.html5Mode(true);
 
 	$stateProvider.state({
 		name: 'home',
 		url: '/',
 		templateUrl: tlHomeUrl
 	});
+
 	$stateProvider.state({
 		name: 'products',
 		url: '/products',
