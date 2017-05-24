@@ -2,11 +2,12 @@ import './style.scss';
 
 import 'angular';
 import './tl-router/tl-router.ts';
+import './tl-star/tl-star.ts';
 
 
 declare const angular: angular.IAngularStatic;
 
-const app = angular.module('main', ['tl-router']);
+const app = angular.module('main', ['tl-router', 'tl-star']);
 
 declare const require;
 const tlHeaderUrl = require('./tmpl/tl-header.html');

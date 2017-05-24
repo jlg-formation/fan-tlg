@@ -48,7 +48,18 @@ module.exports = {
 				}, {
 					loader: 'html-loader'					
 				}]
-			}
+			},
+            {
+				test: /\.png$/,
+				use: {
+					loader: 'file-loader',
+                    options: {
+						name: '[path][name].[ext]',
+						publicPath: 'wpk/',
+                        useRelativePath: true,
+					}
+				}
+			},
         ]
     },
     devtool: 'source-map',
