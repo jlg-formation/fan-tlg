@@ -10,11 +10,13 @@ const whiteStarUrl = require('./img/white_star.png');
 
 class TlStarCtrl {
 	/* @ngInject */
+	public n: number;
+
 	constructor(private $scope: angular.IScope, $element: JQuery, $attrs: angular.IAttributes, $compile) {
 		console.log('TlStarCtrl', arguments);
-		this.$scope.$watch('n', () => {
+		this.$scope.$watch('$ctrl.n', () => {
 			let html = '';
-			let note = Number(this.$scope.n) || 3;
+			let note = Number(this.n) || 3;
 			note = (note > 5) ? 5 : note;
 			note = (note < 1) ? 1 : note;
 			for (let i = 0; i < note; i++) {
@@ -31,20 +33,16 @@ class TlStarCtrl {
 
 	public update(note: number) {
 		console.log('update', arguments);
-		this.$scope.n = note;
+		this.n = note;
 	}
 
 }
 
 
-app.directive('tlStar', () => {
-	return {
-		restrict: 'E',
-		scope: {
-			n: '=?note'
-		},
-		controller: TlStarCtrl,
-		controllerAs: '$ctrl',
-	};
+app.component('tlStar', {
+	bindings: {
+		n: '=?note'
+	},
+	controller: TlStarCtrl
 });
 
