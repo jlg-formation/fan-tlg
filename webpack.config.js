@@ -18,11 +18,13 @@ module.exports = {
                 test: /\.ts$/,
                 exclude: /node_modules/,
                 use: [{
+                    loader: 'ng-annotate-loader',
+                }, {
                     loader: 'awesome-typescript-loader',
                     options: {
                         configFileName: path.resolve(__dirname, './tsconfig.json')
                     }
-                }]
+                } ]
             },
             {
                 test: /\.css$/,
