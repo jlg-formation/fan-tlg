@@ -8,13 +8,15 @@ const jquery = require('jquery');
 (window as any).jQuery = jquery;
 
 import 'angular';
+import './tl-http/tl-http.ts';
 import './tl-router/tl-router.ts';
 import './tl-star/tl-star.ts';
 
 
+
 declare const angular: angular.IAngularStatic;
 
-const app = angular.module('main', ['tl-router', 'tl-star']);
+const app = angular.module('main', ['tl-router', 'tl-star', 'tl-http']);
 
 
 const tlHeaderUrl = require('./tmpl/tl-header.html');

@@ -1,9 +1,10 @@
 import 'angular';
 import 'angular-ui-router';
+import '../tl-http/tl-http.ts';
 
 declare const angular: angular.IAngularStatic;
 
-const app = angular.module('tl-router', ['ui.router']);
+const app = angular.module('tl-router', ['ui.router', 'tl-http']);
 
 declare const require;
 const tlHomeUrl = require('./tmpl/home.html');
@@ -34,7 +35,9 @@ app.config(($locationProvider, $stateProvider, $urlRouterProvider) => {
 	$stateProvider.state({
 		name: 'services',
 		url: '/services',
-		templateUrl: tlServicesUrl
+		templateUrl: tlServicesUrl,
+		controller: 'TlHttpCtrl',
+		controllerAs: '$ctrl'
 	});
 	$stateProvider.state({
 		name: 'contact',
